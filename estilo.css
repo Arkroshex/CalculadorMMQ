@@ -1,0 +1,25 @@
+#inputBody {
+    text-align: center;
+}
+
+.botaoGenerico {
+    width: 200px;
+    height: 30px;
+}
+
+.tabela { 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tabela th {
+    text-align: center;
+}
+
+#calcularMMQ {
+    text-align: center;
+}
+
+#resultadoMMQ {
+    text-align: center;
+}
