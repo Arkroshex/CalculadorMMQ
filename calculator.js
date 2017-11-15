@@ -68,7 +68,7 @@ function calcularMMQ() {
     MMQ += "$$ a = &#92;frac{[" + somaXNumeric + "][" + somaYNumeric + "] - " + n + "[" + somaXiYiNumeric + "]}{[" + somaXNumeric + "]²" + " - " + n + "[" + somaX2Numeric + "]} $$<br/>";
     MMQ += "$$ a = &#92;frac{" + (somaXNumeric * somaYNumeric - n*somaXiYiNumeric) + "}{" + (somaXNumeric*somaXNumeric - n*somaX2Numeric) + "} = " + 
     a + "$$<br/><br/>";
-
+    MMQ += "$$ b = &#92;frac{[&#92;sum_i x_{i}y_{i}][&#92;sum_i x_{i}] - n[[&#92;sum_i x_{i}]^{2}][&#92;sum_i x_{i}]}{[&#92;sum_i x_{i}]^{2} - n[&#92;sum_i x_{i}^{2}]} $$ <br/>";
     MMQ+= "$$ b =  &#92;frac{[" + somaXiYi + "][" + somaX + "] - [" + somaX2 + "][" + somaY + "]}{[" + somaX + "]²" + " - " + n + "[" + somaX2 + "]} $$<br/>";
     MMQ+= "$$ b =  &#92;frac{[" + somaXiYiNumeric + "][" + somaXNumeric + "] - [" + somaX2Numeric + "][" + somaYNumeric + "]}{[" + somaXNumeric + "]²" + " - " + n + "[" + somaX2Numeric + "]} $$<br/>";
     MMQ+= "$$ b =  &#92;frac{" + (somaXiYiNumeric*somaXNumeric - somaX2Numeric * somaYNumeric) + "}{" + (somaXNumeric*somaXNumeric - n*somaX2Numeric) + "} = " +
