@@ -2,8 +2,10 @@ let listaValores = new Array();
 let cont = 1;
 
 function adicionarValor() {
-    const x = document.querySelector("#xAxis").value;
-    const y = document.querySelector("#yAxis").value;
+    let x = document.querySelector("#xAxis").value;
+    let y = document.querySelector("#yAxis").value;
+    x = x.replace(",", ".");
+    y = y.replace(",", ".");
     listaValores.push({x: x, y: y, id: cont});
     cont++;
     reloadListValores();
