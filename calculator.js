@@ -64,8 +64,8 @@ function calcularMMQ() {
     somaXiYi = somaXiYi.substring(0, somaXiYi.length-2);
     somaX2 = somaX2.substring(0, somaX2.length-2);
     let n = listaValores.length;
-    let a = ((somaXNumeric * somaYNumeric - n*somaXiYiNumeric) / (somaXNumeric*somaXNumeric - n*somaX2Numeric));
-    let b = ((somaXiYiNumeric*somaXNumeric - somaX2Numeric * somaYNumeric) / (somaXNumeric*somaXNumeric - n*somaX2Numeric));
+    let a = formatarResultados(((somaXNumeric * somaYNumeric - n*somaXiYiNumeric) / (somaXNumeric*somaXNumeric - n*somaX2Numeric)));
+    let b = formatarResultados(((somaXiYiNumeric*somaXNumeric - somaX2Numeric * somaYNumeric) / (somaXNumeric*somaXNumeric - n*somaX2Numeric)));
     MMQ += "$$ a = &#92;frac{[" + somaX + "][" + somaY + "] - " + n + "[" + somaXiYi + "]}{[" + somaX + "]²" + " - " + n + "[" + somaX2 + "]} $$<br/>";
     MMQ += "$$ a = &#92;frac{[" + somaXNumeric + "][" + somaYNumeric + "] - " + n + "[" + somaXiYiNumeric + "]}{[" + somaXNumeric + "]²" + " - " + n + "[" + somaX2Numeric + "]} $$<br/>";
     MMQ += "$$ a = &#92;frac{" + (somaXNumeric * somaYNumeric - n*somaXiYiNumeric) + "}{" + (somaXNumeric*somaXNumeric - n*somaX2Numeric) + "} = " + 
@@ -80,4 +80,9 @@ function calcularMMQ() {
     MMQ+= "$$ y = " + a + "x + " + b + "$$";
     document.querySelector("#resultadoMMQ").innerHTML = MMQ;
     MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+}
+
+formatarResultados = (result) => {
+    const casas = document.querySelector("#places").value;
+    return casas === '' ? result : result.toFixed(casas);
 }

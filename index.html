@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <head>
@@ -8,24 +7,31 @@
   <link rel="stylesheet" href="bootstrap.min.css">
   <script src="calculator.js" charset="utf-8"></script>
   <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
 </head>
+
 <body>
-    <div id="inputBody">
-        <h1>Dados da Curva</h1>
-        <label>Eixo X</label>
-        <input type="text" id="xAxis">
-        <label>Eixo Y</label>
-        <input type="text" id="yAxis">
-        <br/><br/>
-        <button class="botaoGenerico" onclick="adicionarValor()">Adicionar Ponto</button>
-        <button class="botaoGenerico" id="calcularMMQ" onclick="calcularMMQ()">Calcular Mínimos Quadrados</button>
+  <div id="inputBody">
+    <h1>Dados da Curva</h1>
+    <div class="input-row">
+      <label>Eixo X</label>
+      <input type="text" id="xAxis">
+      <label>Eixo Y</label>
+      <input type="text" id="yAxis">
     </div>
-    <br/>
-    <div id="valoresInseridos">
+    <div class="input-row">
+      <label>Número de casas decimais para o resultado (opcional)</label>
+      <input type="number" id="places">
     </div>
-    <div id="resultadoMMQ">
-    </div>
+    <button class="botaoGenerico" onclick="adicionarValor()">Adicionar Ponto</button>
+    <button class="botaoGenerico" id="calcularMMQ" onclick="calcularMMQ()">Calcular Mínimos Quadrados</button>
+  </div>
+  <br />
+  <div id="valoresInseridos">
+  </div>
+  <div id="resultadoMMQ">
+  </div>
 </body>
+
 </html>
