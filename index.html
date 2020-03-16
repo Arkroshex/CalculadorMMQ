@@ -4,36 +4,142 @@
   <meta charset="UTF-8">
   <title>Calculador Método dos Minimos Quadrados (Passo-a-passo)</title>
   <link rel="stylesheet" href="estilo.css">
-  <link rel="stylesheet" href="bootstrap.min.css">
-  <script src="calculator.js" charset="utf-8"></script>
-  <script type="text/javascript" async
-    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
-</head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/ <!DOCTYPE html>
 
-<body>
-  <div id="inputBody">
-    <h1>Dados da Curva</h1>
-    <div class="input-row">
-      <label>Eixo X</label>
-      <input type="text" id="xAxis">
-      <label>Eixo Y</label>
-      <input type="text" id="yAxis">
-    </div>
-    <div class="input-row">
-      <label>Número de casas decimais para o resultado (opcional)</label>
-      <input type="number" id="places">
-    </div>
-    <button class="botaoGenerico" onclick="adicionarValor()">Adicionar Ponto</button>
-    <button class="botaoGenerico" id="calcularMMQ" onclick="calcularMMQ()">Calcular Mínimos Quadrados</button>
-  </div>
-  <br />
-  <div class="container-sm">
-  <div id="valoresInseridos">
-  </div>
-  <div id="resultadoMMQ">
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculador Método dos Minimos Quadrados (Passo-a-passo)</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="calculator.js" charset="utf-8"></script>
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+      </script>
+  </head>
+  
+  <body>
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+     <li class="nav-item">
+       <a href="https://titanci.com.br/"><img src="logo.png" alt="" title=""></a>
+       </li>
+
+    <li class="nav-item">
+      <a class="nav-link active" id="home-tab" data-toggle="tab" href="#Início" role="tab" aria-controls="home" aria-selected="true">Início</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " id="results-tab" data-toggle="tab" href="#resultados" role="tab" aria-controls="results" aria-selected="false">Resultados</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " id="contact-tab" data-toggle="tab" href="#créditos" role="tab" aria-controls="contact" aria-selected="false">Créditos</a>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+
+
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"> 
+      <div class="container">
+ <div class="row">
+   <div class="col-sm">
+     <div class="card" style="width:  0rem; height: fill; text-align: center; background-color: #f2a90000;justify-content: center; align-items: center;">
+       <div class="card-body"></div>
+     </div>
+   </div>
+   <div class="col-sm">
+     <div class="card" style="width: 40rem; height: fill; text-align: center; background-color: #424242;justify-content: center; align-items: center;">
+       <div class="card-body">
+         </br>
+         <h2 class="card-title" style="color: #f2a900;">Dados da Curva</h2>
+         <h6 class="card-subtitle mb-2 " style="color: #ffd575;">Insira aqui os dados para o cálculo dos M.Q</h6>
+         </br> </br>
+     <div class="input-group mb-3" style="width: 25rem;">
+       <input type="text" placeholder="Eixo X" aria-label="Eixo X" id="xAxis" class="form-control">
+       <input type="text" placeholder="Eixo Y"aria-label="Eixo Y"
+     id="yAxis" class="form-control">
+     <div class="input-group-prepend">
+         <button class="btn btn-secondary" type="button" id="button-addon1" onclick="adicionarValor()">Adicionar Valor</button>
+       </div>
+     <div class="input-group flex-nowrap">
+       <div class="input-group-prepend">
+         <span class="input-group-text" id="addon-wrapping">Opcional</span>
+       </div>
+       <input type="number" id="places" class="form-control" placeholder="Casas decimais" aria-label="places" aria-describedby="addon-wrapping">
+
+      </div>
+    
+         <button type="button" class="btn btn-outline-warning btn-lg btn-block" id="calcularMMQ" onclick="calcularMMQ()">Calcular Mínimos Quadrados</button>
+     </div></div></div>
+   </div>
+   <div class="col-sm">
+     <div class="card" style="width: 0rem; height: fill; text-align: center; background-color: #f2a90000;justify-content: center; align-items: center;">
+       <div class="card-body"></div>
+     </div>
+   </div>
+ </div>
 </div>
-</body>
+    </div>
 
-</html>
+
+    <div class="tab-pane fade show active" id="results" role="tabpanel" aria-labelledby="profile-tab">     
+     <div class="container">
+       <div class="row">
+         <div class="col-sm">
+           <div class="card" style="width:  0rem; height: fill; text-align: center; background-color: #f2a90000;justify-content: center; align-items: center;">
+             <div class="card-body"></div>
+           </div>
+         </div>
+         <div class="col-sm">
+           <div class="card" style="width: 40rem; text-align: center; background-color: #424242;">
+               <div class="card-body">
+                                     </br>
+                 <h2 class="card-title" style="color: #f2a900;">Resultados</h2>
+                 <h6 class="card-subtitle mb-2 " style="color: #ffd575;">Resolução Passo-a-passo dos  Mínimos Quadrados</h6>
+                 <div class="container-sm">
+                  <div id="valoresInseridos" >
+                  </div>
+                  <div id="resultadoMMQ" style="color:#ffffff;">
+                  </div>
+                </div>
+             </div></div>
+         </div>
+         <div class="col-sm">
+           <div class="card" style="width: 0rem; height: fill; text-align: center; background-color: #f2a90000;justify-content: center; align-items: center;">
+             <div class="card-body"></div>
+           </div>
+         </div>
+       </div></div>
+
+
+    <div class="tab-pane fade show active" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      
+   <div class="container">
+     <div class="row">
+       <div class="col-sm">
+         <div class="card" style="width:  0rem; height: fill; text-align: center; background-color: #f2a90000;justify-content: center; align-items: center;">
+           <div class="card-body"></div>
+         </div>
+       </div>
+       <div class="col-sm">
+         <div class="card" style="width: 40rem; height: 20rem; text-align: center; background-color: #424242;">
+             <div class="card-body">
+                                   </br>
+               <h2 class="card-title" style="color: #f2a900;">Sobre o projeto</h2>
+               <h6 class="card-subtitle mb-2 " style="color: #ffd575;">Insira aqui os dados para o cálculo dos M.Q</h6>
+               <p class="card-text" style= "color:#ffffff;">Este projeto é baseado na ferramenta criada por Pedro "Chiiip" Augusto. O código original e este Fork estão disponíveis no GitHub.</p>
+               <a href="https://github.com/Chiiip" class="card-link">GitHub do autor</a>
+               <a href="https://github.com/Arkroshex/CalculadorMMQ" class="card-link">GitHub desde Projeto</a>
+           </div>
+           </div>
+       </div>
+       <div class="col-sm">
+         <div class="card" style="width: 0rem; height: fill; text-align: center; background-color: #f2a90000;justify-content: center; align-items: center;">
+           <div class="card-body"></div>
+         </div>
+       </div>
+     </div>
+   </div>
+   </div>
+    </div>
+  </div>
+  </body>
+  </html>

@@ -14,12 +14,12 @@ function adicionarValor() {
 function reloadListValores() { 
     clearDiv();
     if (listaValores.length > 0) {
-        let table = '<table class="tabela table-striped table-condensed table-responsive"<tbody><tr><th>Número</th><th>Eixo X</th><th>Eixo Y</th><th>Ação</th></tr>';
+        let table = '<table class="table table-striped table-condensed table-responsive" style="color: #f2a900;"><tbody><thead class="thead-light"><tr><th>Número</th><th>Eixo X</th><th>Eixo Y</th><th>Ação</th></tr></thead>';
         listaValores.forEach(element => {
         let a = '<tr><td>' + element.id + '</td><td>';
         a += element.x + '</td>';
         a += '<td>' + element.y + '</td>';
-        a += '<td><button onclick="deletePoint(\'' + element.id + '\')">Remover</button></td>'
+        a += '<td><button class="btn btn-secondary" onclick="deletePoint(\'' + element.id + '\')">Remover</button></td>'
         table += a; 
     });
     table += '</tbody></table>';
